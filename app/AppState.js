@@ -22,10 +22,12 @@ class AppState extends EventEmitter {
 
   /** @type {import('./Models/House').House[]} */
 
-  houses = [
-    // new House({ address: '9568 N 51st Ave. GardenView, TX 85936', bed: 3, bath: 2, img: 'https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1', description: "A boooootiful house", price: 200, 000 }),
-    // new House({ address: '3400 W Welbers St. Belmer, TX 85567', bed: 5, bath: 3, img: 'https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1', description: "An even more booooootiful house", price: 400, 000 })
-  ]
+  houses = loadState('houses', [House])
+
+  // houses = [
+  // new House({ address: '9568 N 51st Ave. GardenView, TX 85936', bed: 3, bath: 2, img: 'https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1', description: "A boooootiful house", price: 200, 000 }),
+  // new House({ address: '3400 W Welbers St. Belmer, TX 85567', bed: 5, bath: 3, img: 'https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1', description: "An even more booooootiful house", price: 400, 000 })
+  // ]
 
   // NOTE super weird type case as an example
   /** @type {[Number, String, Number]} */
