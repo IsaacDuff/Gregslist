@@ -29,6 +29,12 @@ class AppState extends EventEmitter {
   // new House({ address: '3400 W Welbers St. Belmer, TX 85567', bed: 5, bath: 3, img: 'https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1', description: "An even more booooootiful house", price: 400, 000 })
   // ]
 
+  /** @type {import('./Models/Job').Job[]} */
+
+  jobs = [
+
+  ]
+
   // NOTE super weird type case as an example
   /** @type {[Number, String, Number]} */
   example
