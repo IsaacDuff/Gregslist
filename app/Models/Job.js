@@ -35,4 +35,70 @@ export class Job {
     </div>
     `
     }
+
+    static JobForm() {
+        return `
+    <div class="col-6 col-md-4">
+    <div class="card elevation-2 text-dark fw-bold text-shadow">
+        <img
+        src="${this.img}"
+        alt="${this.address}-${this.bed}">
+        <div class="p-2">
+        <div class="color px-5 rounded" style="background: #111927">
+        <h3 class="text-center border-bottom border-dark text-light">${this.address}</h3> 
+        </div>
+        <h5 class="text-center border-bottom border-dark"> Bedrooms: ${this.bed} | Baths: ${this.bath}</h5>
+        <p>${this.description}</p>
+        <p class="text-end">🍔${this.price}</p>
+        <button class="btn btn-outline-danger" title="delete car" onclick="app.housesController.deleteHouse('${this.id}')"><i class="mdi mdi-delete" ></i></button>
+        </div>
+    </div>
+    </div>`
+    }
+
+
+    static HouseForm() {
+        return `
+    <form onsubmit="app.jobsController.createJob()" class="row bg-white rounded elevation-2 p-4">
+    <h3>List a Job</h3>
+    <div class="mb-2 col-12">
+        <label for="position">Position</label>
+        <input type="text" name="position" id="position" class="form-control" required 
+        placeholder="Position name here...">
+    </div>
+    <div class="mb-2 col-6">
+        <label for="company">Company</label>
+        <input type="text" name="company" id="company" class="form-control" required 
+        placeholder="Company Name">
+    </div>
+    <div class="mb-2 col-6">
+        <label for="location">Location</label>
+        <input type="text" name="location" id="location" class="form-control" required 
+        placeholder="Address Here">
+    </div>
+    <div class="mb-2 col-12">
+        <label for="img">Image URL</label>
+        <input type="url" name="img" id="img" class="form-control" required
+        placeholder="please enter a url for an image...">
+    </div>
+    <div class="mb-2 col-12">
+        <label for="description">Description</label>
+        <input type="text" name="description" id="description" class="form-control" maxlength="50">
+    </div>
+    <div class="mb-2 col-6">
+        <label for="shift">Shift Available</label>
+        <input type="text" name="shift" id="shift" class="form-control" required 
+        placeholder="Full-Time">
+    </div>
+    <div class="mb-2 col-6">
+    <label for="salary">Salary</label>
+    <input type="number" name="salary" id="salary" class="form-control" required min="1">
+</div>
+    <div class="text-end mt-2">
+        <button class="btn" type="button">cancel</button>
+        <button class="btn btn-primary" type="submit">submit</button>
+    </div>
+    </form>
+    `
+    }
 }
