@@ -15,16 +15,40 @@ function _drawJobs() {
     setHTML('listings', template)
 }
 
+function _drawJobForm() {
+    setHTML('form', Job.JobForm())
+}
+
 
 
 export class JobsController {
 
     constructor() {
-        console.log("hello from the jobs controller")
+        console.log('jobs controller loaded', appState.jobs);
+        _drawJobs()
+        appState.on('jobs', _drawJobs)
     }
 
     showJobs() {
         _drawJobs()
         _drawJobForm()
     }
+
+    createJob() {
+        event.preventDefault()
+        console.log('creating a job');
+        const form = event.target
+        console.log(form.position.value, form.company.value, form.shift.value);
+        let formData = getFormData(form)
+        console.log(formData)
+        jobsService.createJob(formData)
+        form.reset()
+    }
+
+    async deleteJob(id) {
+        if (await Pop.confirm("Are you sure you with to delete")) {
+            jobsService.deleteJob(id)
+        }
+    }
+
 }

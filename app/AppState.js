@@ -1,5 +1,6 @@
 import { Car } from "./Models/Car.js"
 import { House } from "./Models/House.js"
+import { Job } from "./Models/Job.js"
 import { Value } from "./Models/Value.js"
 import { EventEmitter } from "./Utils/EventEmitter.js"
 import { isValidProp } from "./Utils/isValidProp.js"
@@ -31,9 +32,10 @@ class AppState extends EventEmitter {
 
   /** @type {import('./Models/Job').Job[]} */
 
-  jobs = [
+  // jobs = [
 
-  ]
+  // ]
+  jobs = loadState('jobs', [Job])
 
   // NOTE super weird type case as an example
   /** @type {[Number, String, Number]} */

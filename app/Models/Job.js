@@ -28,36 +28,17 @@ export class Job {
         </div>
         <h5 class="text-center border-bottom border-dark"> Shift: ${this.shift} | Salary: $${this.salary}/hr</h5>
             <p>${this.description}</p>
-            <p class="text-end">🗺️${this.location}</p>
-            <button class="btn btn-outline-danger" title="delete car" onclick="app.housesController.deleteHouse('${this.id}')"><i class="mdi mdi-delete" ></i></button>
+            <p class="text-end">Address: ${this.location}</p>
+            <button class="btn btn-outline-danger" title="delete car" onclick="app.jobsController.deleteJob('${this.id}')"><i class="mdi mdi-delete" ></i></button>
         </div>
         </div>
     </div>
     `
     }
 
+
+
     static JobForm() {
-        return `
-    <div class="col-6 col-md-4">
-    <div class="card elevation-2 text-dark fw-bold text-shadow">
-        <img
-        src="${this.img}"
-        alt="${this.address}-${this.bed}">
-        <div class="p-2">
-        <div class="color px-5 rounded" style="background: #111927">
-        <h3 class="text-center border-bottom border-dark text-light">${this.address}</h3> 
-        </div>
-        <h5 class="text-center border-bottom border-dark"> Bedrooms: ${this.bed} | Baths: ${this.bath}</h5>
-        <p>${this.description}</p>
-        <p class="text-end">🍔${this.price}</p>
-        <button class="btn btn-outline-danger" title="delete car" onclick="app.housesController.deleteHouse('${this.id}')"><i class="mdi mdi-delete" ></i></button>
-        </div>
-    </div>
-    </div>`
-    }
-
-
-    static HouseForm() {
         return `
     <form onsubmit="app.jobsController.createJob()" class="row bg-white rounded elevation-2 p-4">
     <h3>List a Job</h3>
